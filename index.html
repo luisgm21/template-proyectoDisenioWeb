@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Paletas de Colores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    
+    <style>
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --color-primario: #000000; /* Negro */
+            --color-secundario: #FF6A00; /* Naranja intenso */
+            --color-terciario: #2B2B2B; /* Gris oscuro para énfasis/alertas */
+            --color-fondo: #0A0A0A; /* Negro suave */
+            --color-texto: #FFFFFF; /* Blanco */
+        }
+        body {
+            margin: 0;
+            font-family: 'Amaranth', 'Arial', sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+        }
+        nav {
+            background: var(--color-primario);
+            color: var(--color-texto);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: var(--color-texto);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+        main {
+            min-height: 60vh;
+            margin: 3.125rem;
+        }
+        h1 {
+            color: var(--color-secundario);
+            margin-bottom: 3.125rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        .tabla-horarios {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: var(--color-primario);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .tabla-horarios th, .tabla-horarios td {
+            border: 1px solid var(--color-terciario);
+            padding: 0.75rem 1rem;
+            text-align: center;
+            color: var(--color-texto);
+        }
+        .tabla-horarios th {
+            background: var(--color-secundario);
+            color: var(--color-primario);
+        }
+        .tabla-horarios tr:nth-child(even) {
+            background: var(--color-terciario);
+        }
+        footer {
+            background: var(--color-terciario);
+            color: var(--color-texto);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .btn-paleta {
+            background: var(--color-secundario);
+            color: var(--color-primario);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-paleta:hover {
+            background: var(--color-terciario);
+            color: var(--color-secundario);
+        }
+        h1 {
+            font-family: 'Trade Winds', 'sans-serif';
+            font-size: 66px;
+        }
+
+        h2 {
+            font-family: 'Trade Winds', 'sans-serif';
+            font-size: 36px;
+        }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined', 'Amaranth', Arial, sans-serif;
+            font-size: 1.2em;
+            vertical-align: middle;
+            color: var(--color-primario);
+            margin-right: 0.5em;
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 700,
+                'GRAD' 0,
+                'opsz' 48;
+        }
+        .btn-paleta .material-symbols-outlined {
+            color: var(--color-primario);
+            transition: color 0.2s;
+        }
+        .btn-paleta:hover .material-symbols-outlined {
+            color: var(--color-secundario);
+        }
+
+                .form-ejemplo {
+            margin-top: 2.5rem;
+            background: var(--color-primario);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            max-width: 420px;
+            color: var(--color-texto);
+        }
+        .form-ejemplo h2 {
+            color: var(--color-secundario);
+            font-family: 'Trade Winds', 'sans-serif';
+            margin-top: 0;
+        }
+        .form-ejemplo label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .form-ejemplo input,
+        .form-ejemplo textarea,
+        .form-ejemplo select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-terciario);
+            border-radius: 4px;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: 'Amaranth', Arial, sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            box-sizing: border-box;
+        }
+        
+        .form-ejemplo input[type="color"] {
+            padding: 0.2rem;
+            height: 2.2rem;
+        }
+        .form-ejemplo textarea {
+            resize: vertical;
+        }
+        .form-ejemplo .form-checks {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        /* Personalización de radio y checkbox */
+        .form-ejemplo input[type="checkbox"],
+        .form-ejemplo input[type="radio"] {
+            accent-color: #000;
+        }
+        .form-ejemplo .btn-paleta {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">CATASTRONG</div> 
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h1>Bienvenido a CATASTRONG </h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore impedit dolore possimus illum labore ad autem fugiat at repudiandae, pariatur expedita repellendus? Cupiditate quidem nihil tempore! Maiores, commodi minus. Eligendi?
+            Eaque nesciunt quas modi incidunt est sed, rem quia iste cumque suscipit distinctio sequi. Repellat dolorem voluptates, accusantium vel qui facere temporibus similique odit quae architecto velit alias, error nobis.</p>
+        </section>
+        <section>
+            <h2>Horarios de Atención</h2>
+            <table class="tabla-horarios">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario de Apertura</th>
+                        <th>Horario de Cierre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Miércoles</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sábado</td>
+                        <td>09:00</td>
+                        <td>13:00</td>
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td>Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <button class="btn-paleta"><span class="material-symbols-outlined">search</span> Probar botón </button>
+        </section>
+        <section>
+            <p style="max-width: 420px; color: var(--color-texto); font-size: 1.08rem;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur omnis hic ipsam molestiae, cum inventore, delectus, odit aut officia excepturi quas. Recusandae distinctio eligendi alias quas possimus dolorem atque?
+            </p>
+            <form class="form-ejemplo">
+                <h2>Formulario de ejemplo</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="0" max="120">
+
+                <label for="color">Color favorito:</label>
+                <input type="color" id="color" name="color">
+
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+
+                <label for="opcion">Selecciona una opción:</label>
+                <select id="opcion" name="opcion">
+                    <option value="">-- Elige --</option>
+                    <option value="1">Opción 1</option>
+                    <option value="2">Opción 2</option>
+                    <option value="3">Opción 3</option>
+                </select>
+
+                <div class="form-checks">
+                    <label><input type="checkbox" name="suscribir"> Suscribirse al boletín</label>
+                    <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                </div>
+
+                <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span> Enviar</button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        &copy; 2026 Prueba de Paletas de Colores. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
