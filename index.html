@@ -180,6 +180,39 @@
             margin-bottom: 0.5rem;
             box-sizing: border-box;
         }
+
+        /* Personalización input date */
+        .input-date-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .input-date-wrapper input[type="date"] {
+            width: 100%;
+            padding-right: 2.5rem;
+        }
+        /* Ocultar icono nativo del input date en Chrome, Edge, Safari */
+        .input-date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            width: 2.5rem;
+            cursor: pointer;
+        }
+        /* Ocultar icono nativo en Firefox */
+        .input-date-wrapper input[type="date"]::-moz-calendar-picker-indicator {
+            opacity: 0;
+        }
+        /* Icono personalizado */
+        .input-date-wrapper .material-symbols-outlined {
+            position: absolute;
+            right: 0.3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--color-secundario);
+            font-size: 1.7em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
         
         .form-ejemplo input[type="color"] {
             padding: 0.2rem;
@@ -292,7 +325,10 @@
                 <input type="color" id="color" name="color">
 
                 <label for="fecha">Fecha de nacimiento:</label>
-                <input type="date" id="fecha" name="fecha">
+                <div class="input-date-wrapper">
+                    <input type="date" id="fecha" name="fecha">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                </div>
 
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
