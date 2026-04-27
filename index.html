@@ -236,6 +236,61 @@
             width: 100%;
             margin-top: 1.5rem;
         }
+
+        .card {
+            width: 320px;
+            background-color: #0A0A0A;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+            border: 1px solid #2B2B2B;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #FFFFFF;
+            font-family: 'Trade Winds', 'sans-serif';
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+                color: #ffffff;
+                font-size: 14px;
+                margin-bottom: 20px;
+                line-height: 1.4;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #FF6A00;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .card-button:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
     </style>
     
 </head>
@@ -350,7 +405,21 @@
                 <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span> Enviar</button>
             </form>
         </section>
+        <section>
+            <div class="card">
+                <img src="catastrong.png" alt="Gym">
 
+                <div class="card-content">
+                <div class="card-title">Entrenamiento Funcional</div>
+
+                <div class="card-description">
+                    Mejora tu resistencia, fuerza y coordinación con rutinas dinámicas adaptadas a tu nivel.
+                </div>
+
+                <a href="#" class="card-button">Ver más</a>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         &copy; 2026 Prueba de Paletas de Colores. Todos los derechos reservados.
